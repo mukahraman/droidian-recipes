@@ -43,7 +43,12 @@ jobs:
 
       - name: Set nightly version
         if: startsWith(github.ref, 'refs/tags/droidian') != true
-        run: echo "DROIDIAN_VERSION=next" >> $GITHUB_ENV
+        # "next" is the rolling-development snapshot at
+        #   http://releases.droidian.org/snapshots/next/
+        # As of 2026-05, it has a libgtk-4-1 / gnome-control-center version
+        # skew that breaks droidian-phosh-full's dep tree. Use "current"
+        # (Droidian 101 stable, snapshotted 2025-12-07) until that clears.
+        run: echo "DROIDIAN_VERSION=current" >> $GITHUB_ENV
 
       - name: Set version
         if: startsWith(github.ref, 'refs/tags/droidian') == true
