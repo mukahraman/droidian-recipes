@@ -1,14 +1,14 @@
 # Packages
-.pdx206_packages:
-  packages: &pdx206_packages
-    - adaptation-sony-pdx206
-    - adaptation-sony-pdx206-configs
+.gts7xlwifi_packages:
+  packages: &gts7xlwifi_packages
+    - adaptation-samsung-gts7xlwifi
+    - adaptation-samsung-gts7xlwifi-configs
 
 # Devices
-pdx206-phosh:
+gts7xlwifi-phosh:
   type: image
   arch: arm64
   edition: phosh
-  variant: phone
+  variant: tablet
   apilevel: 30
-  packages: *pdx206_packages
+  packages: *gts7xlwifi_packages
